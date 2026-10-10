@@ -1,0 +1,25 @@
+{
+  "name": "unsaid",
+  "displayName": "Unsaid",
+  "version": "1.0.0",
+  "description": "Catches messages Claude meant for you that went into a hidden thinking block. Before Claude asks you a question or asks you to approve a plan, unsaid checks that the context it wrote for you is visible text; if it is hidden, Claude is asked to send it again before the question appears.",
+  "author": {
+    "name": "Derek Denmark",
+    "url": "https://github.com/derekwden-droid"
+  },
+  "homepage": "https://github.com/derekwden-droid/unsaid",
+  "repository": "https://github.com/derekwden-droid/unsaid",
+  "license": "MIT",
+  "keywords": ["thinking", "askuserquestion", "plan-mode", "hidden-message", "hooks"],
+  "documentationUrl": "https://github.com/derekwden-droid/unsaid/blob/main/README.md",
+  "supportUrl": "https://github.com/derekwden-droid/unsaid/issues",
+  "privacyPolicyUrl": "https://github.com/derekwden-droid/unsaid/blob/main/PRIVACY.md",
+  "userConfig": {
+    "on_hidden_message": {
+      "type": "string",
+      "title": "When a message is hidden",
+      "description": "resend: hold the question once and have Claude send the hidden message as visible text first (the default). show: let the question through and show you the hidden message as a notice.",
+      "default": "resend"
+    }
+  }
+}

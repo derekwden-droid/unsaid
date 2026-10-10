@@ -1,0 +1,13 @@
+{
+  "description": "Before Claude asks you a question or asks you to approve a plan, checks that the message it wrote for you is visible text and not hidden in a thinking block.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "AskUserQuestion|ExitPlanMode",
+        "hooks": [
+          { "type": "command", "command": "node", "args": ["${CLAUDE_PLUGIN_ROOT}/scripts/unsaid.mjs", "--mode=${user_config.on_hidden_message}"], "timeout": 10 }
+        ]
+      }
+    ]
+  }
+}
